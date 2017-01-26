@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef _SYMBOLS_H
-#define _SYMBOLS_H
+//#ifndef _SYMBOLS_H
+//#define _SYMBOLS_H
 
 #include <QString>
 
@@ -14,7 +14,8 @@ namespace ODLCSymbols
 	const QString qsOrganizationName("OOELZ");
 	const QString qsOrganizationDomain("ooelz.at");
 
-
+	const QString qsLoggerDefaultFilename("/tmp/odlc.log");
+	
 }
-
-#endif _SYMBOLS_H
+//
+//#endif

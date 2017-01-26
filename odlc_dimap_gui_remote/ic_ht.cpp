@@ -182,17 +182,20 @@ int ht_modify_register(ht_spi_device *device, byte reg, byte val, bool set_spi_o
 
 #ifdef DEBUG
 	char *tmp1, *tmp2, *tmp3;
-#endif
+#endif
+
 	// gesamtes register auslesen
 	ht_read_byte_register(device, reg, &res, false, HT_MASK_NONE);
 	
 #ifdef DEBUG
 	tmp1 = print_bitfield_8(res);
-#endif
+#endif
+
 	res &= (~mask);
 #ifdef DEBUG
 	tmp2 = print_bitfield_8(~mask);
-#endif
+#endif
+
 	res |= (val & mask);
 #ifdef DEBUG
 	tmp3 = print_bitfield_8(res);
@@ -202,7 +205,8 @@ int ht_modify_register(ht_spi_device *device, byte reg, byte val, bool set_spi_o
 	printf("ht_modify_register modifying reg %02X with value %02X and mask %s\n", reg, val, tmp4);
 	printf("(org & ~mask) | (val & mask): (%s & %s) | %s -> final: %s\n", tmp1, tmp2, tmp5, tmp3);
 	free(tmp1); free(tmp2); free(tmp3); free(tmp4); free(tmp5);
-#endif
+#endif
+
 	ht_write_byte_register(device, reg, res, false);
 	
 	return 0;

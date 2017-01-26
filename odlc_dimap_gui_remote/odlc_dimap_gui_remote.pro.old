@@ -11,9 +11,9 @@ TEMPLATE = app
 
 #By default the following file lists are updated automatically by VisualGDB.
 
-SOURCES   += hid.c ic_ht.cpp MainWindow.cpp mcp2210.cpp odlc_dimap_gui_remote.cpp
-HEADERS   += hidapi.h ic_ht.h MainWindow.h mcp2210.h odlc_dimap_gui.h symbols.h
-FORMS     += MainWindow.ui
+SOURCES   += FormSystemLog.cpp hid.cpp ic_ht.cpp MainWindow.cpp mcp2210.cpp mcp2210device.cpp odlc_dimap_gui_remote.cpp
+HEADERS   += FormSystemLog.h hidapi.h ic_ht.h MainWindow.h mcp2210.h mcp2210device.h odlc_dimap_gui.h symbols.h
+FORMS     += MainWindow.ui SystemLog.ui
 RESOURCES += 
 
 include($$lower($$join(CONFIGNAME,,,.pro)))

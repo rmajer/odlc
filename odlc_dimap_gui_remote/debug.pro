@@ -7,8 +7,8 @@ CONFIG += debug
 
 DEFINES += 
 LIBS += -L/usr/lib/arm-linux-gnueabihf -ludev
-INCLUDEPATH += /usr/include
+INCLUDEPATH += /usr/include Debug
 QMAKE_LFLAGS += 
-QMAKE_CXXFLAGS += -ggdb -fpermissive 
-QMAKE_CFLAGS += -ggdb -fpermissive 
+QMAKE_CXXFLAGS += -ggdb -fpermissive -std=c++14 
+QMAKE_CFLAGS += -ggdb -fpermissive -std=c++14 
 COMMONFLAGS += 

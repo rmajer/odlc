@@ -110,7 +110,7 @@
         <Transport>BuiltinShortcut</Transport>
       </RemoteHost>
       <Command>qmake-qt4</Command>
-      <Arguments>odlc_dimap_gui_remote.pro CONFIGNAME=$(ConfigurationName)   </Arguments>
+      <Arguments>odlc_dimap_gui_remote.pro CONFIGNAME=$(ConfigurationName)    </Arguments>
       <WorkingDirectory>$(BuildDir)</WorkingDirectory>
       <Environment>
         <Records />
@@ -203,6 +203,18 @@
     <Enabled>Unknown</Enabled>
     <ExtraSettings>
       <HideErrorsInSystemHeaders>true</HideErrorsInSystemHeaders>
+      <DiscoverySettings>
+        <Mode>Enabled</Mode>
+        <SearchInProjectDir>true</SearchInProjectDir>
+        <SearchInSourceDirs>true</SearchInSourceDirs>
+        <SearchInIncludeSubdirs>true</SearchInIncludeSubdirs>
+        <IgnoredHeaders>
+          <string>qstring</string>
+          <string>qsettings</string>
+          <string>qapplication</string>
+          <string>qmainwindow</string>
+        </IgnoredHeaders>
+      </DiscoverySettings>
     </ExtraSettings>
   </CodeSense>
 </VisualGDBProjectSettings2>

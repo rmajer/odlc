@@ -37,7 +37,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <NMakeIncludeSearchPath>$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0004\linux-g++;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\qt4\QtCore;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\qt4\QtGui;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\qt4;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\c++\4.9;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\arm-linux-gnueabihf\c++\4.9;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\c++\4.9\backward;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0001\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0003\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0002\include-fixed;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\arm-linux-gnueabihf;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0004\linux-g++;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\qt4\QtCore;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\qt4\QtGui;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\qt4;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\c++\4.9;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\arm-linux-gnueabihf\c++\4.9;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\c++\4.9\backward;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0001\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0003\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0002\include-fixed;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\arm-linux-gnueabihf;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include;Debug;Debug;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
     <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
     <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
@@ -51,7 +51,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <NMakeIncludeSearchPath>$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0004\linux-g++;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\qt4\QtCore;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\qt4\QtGui;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\qt4;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\c++\4.9;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\arm-linux-gnueabihf\c++\4.9;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\c++\4.9\backward;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0001\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0003\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0002\include-fixed;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include\arm-linux-gnueabihf;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\192.168.8.114\0000\include;Release;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
     <NMakeForcedIncludes>$(ProjectDir)\gcc_Release.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
-    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Release;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
@@ -59,14 +58,18 @@
     <IncludePath />
     <ReferencePath />
     <LibraryPath />
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Release;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
   </PropertyGroup>
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FormSystemLog.cpp" />
     <ClCompile Include="hid.cpp" />
     <ClCompile Include="ic_ht.cpp" />
+    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="mcp2210.cpp" />
+    <ClCompile Include="mcp2210device.cpp" />
     <ClCompile Include="odlc_dimap_gui_remote.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -76,12 +79,16 @@
     <None Include="odlc_dimap_gui_remote-Release.vgdbsettings" />
     <None Include="odlc_dimap_gui_remote.pro" />
     <None Include="release.pro" />
+    <None Include="SystemLog.ui" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FormSystemLog.h" />
     <ClInclude Include="hidapi.h" />
     <ClInclude Include="ic_ht.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="mcp2210.h" />
+    <ClInclude Include="mcp2210device.h" />
     <ClInclude Include="odlc_dimap_gui.h" />
     <ClInclude Include="symbols.h" />
   </ItemGroup>

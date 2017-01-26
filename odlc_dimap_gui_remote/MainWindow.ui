@@ -24,7 +24,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>40</y>
+      <y>50</y>
       <width>1061</width>
       <height>16</height>
      </rect>
@@ -37,6 +37,24 @@
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pbMCP2210Init">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Initialisieren</string>
     </property>
    </widget>
   </widget>
@@ -191,9 +209,43 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionSystemlog</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>MenuSystemLogClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>531</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbMCP2210Init</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ButtonInitialisierenClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>51</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>531</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>MenuInfoClicked()</slot>
   <slot>MenuEndeClicked()</slot>
+  <slot>MenuSystemLogClicked()</slot>
+  <slot>ButtonInitialisierenClicked()</slot>
  </slots>
 </ui>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormSystemLog</class>
+ <widget class="QWidget" name="FormSystemLog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>892</width>
+    <height>711</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Systemlog</string>
+  </property>
+  <widget class="QPlainTextEdit" name="pteSystemLog">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>871</width>
+     <height>641</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="undoRedoEnabled">
+    <bool>false</bool>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>881</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>891</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>40</number>
+    </property>
+    <property name="sizeConstraint">
+     <enum>QLayout::SetMaximumSize</enum>
+    </property>
+    <property name="margin">
+     <number>10</number>
+    </property>
+    <item>
+     <widget class="QPushButton" name="pbSystemLog_Aktualisieren">
+      <property name="text">
+       <string>Aktualisieren</string>
+      </property>
+      <property name="shortcut">
+       <string>F5</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pbSystemLog_Speichern">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Exportieren...</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pbSystemLog_Reset">
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pbSystemLog_Aktualisieren</sender>
+   <signal>clicked()</signal>
+   <receiver>FormSystemLog</receiver>
+   <slot>syslog_AktualisierenClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>141</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>445</x>
+     <y>355</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbSystemLog_Reset</sender>
+   <signal>clicked()</signal>
+   <receiver>FormSystemLog</receiver>
+   <slot>syslog_ResetClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>748</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>445</x>
+     <y>355</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbSystemLog_Speichern</sender>
+   <signal>clicked()</signal>
+   <receiver>FormSystemLog</receiver>
+   <slot>syslog_ExportierenClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>445</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>445</x>
+     <y>355</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>syslog_AktualisierenClicked()</slot>
+  <slot>syslog_ResetClicked()</slot>
+  <slot>syslog_ExportierenClicked()</slot>
+ </slots>
+</ui>

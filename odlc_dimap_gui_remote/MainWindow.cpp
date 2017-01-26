@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
+#include "FormSystemLog.h"
 #include <QMessageBox>
 #include <QCloseEvent>
 
@@ -10,6 +11,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+	
+	this->log = new FormSystemLog();
+	
+	QObject::connect(odlc_logger, SIGNAL(lineLogged(const QString&)), this->log, SLOT(addLogLine(const QString&)));
+	QObject::connect(odlc_logger, SIGNAL(lineLogged(const QString&)), this->ui->statusBar, SLOT(showMessage(const QString&)));
+	
 }
 
 MainWindow::~MainWindow()
@@ -20,7 +27,9 @@ MainWindow::~MainWindow()
 void MainWindow::MenuInfoClicked()
 {
 	
-	this->ui->statusBar->showMessage("Version " + ODLCSymbols::qsProgramName + ODLCSymbols::qsProgramVersion);
+	//this->ui->statusBar->showMessage("Version " + ODLCSymbols::qsProgramName +" "+ ODLCSymbols::qsProgramVersion);
+	
+	odlc_logger->Log("Versionsinformation : " + ODLCSymbols::qsProgramName +" "+ ODLCSymbols::qsProgramVersion);
 	
     QMessageBox msgBox;
 	msgBox.setText("Programmversion: " + ODLCSymbols::qsProgramVersion);
@@ -34,15 +43,57 @@ void MainWindow::MenuEndeClicked()
 	
 }
 
-void MainWindow::closeEvent(QCloseEvent *event)  // show prompt when user wants to close app
+
+void MainWindow::ButtonInitialisierenClicked()
+{
+	// damit man den button nicht beliebig oft clicken kann
+	this->ui->pbMCP2210Init->setDisabled(true);
+	
+	delete myMCP2210;
+	
+	myMCP2210 = new MCP2210Device();
+	
+	QObject::connect(myMCP2210, SIGNAL(lineToLog(const QString &)), odlc_logger, SLOT(Log(const QString &)));
+	
+	myMCP2210->readDeviceConfig();
+	
+}
+
+
+void MainWindow::MenuSystemLogClicked()
 {
 	
-	// TODO: Prozess- und Systemlog speichern
+	if (NULL != odlc_logger)
+	{
+		this->log->setLogContent(odlc_logger->getLogContent());
+	}
+	
+	this->log->show();
+	
+}
+
+
+void MainWindow::closeEvent(QCloseEvent *event)  // show prompt when user wants to close app
+{
 	
 	event->ignore();
 	if (QMessageBox::Yes == QMessageBox::question(this, "Programmende bestaetigen", "Wirklich beenden?", QMessageBox::No | QMessageBox::Yes))
 	{
+		
+		this->cleanup();
+		
 		event->accept();
 	}
 
+}
+
+
+void MainWindow::cleanup()
+{
+	
+	if (NULL != log)
+	{
+		log->close();
+	}
+	
 }

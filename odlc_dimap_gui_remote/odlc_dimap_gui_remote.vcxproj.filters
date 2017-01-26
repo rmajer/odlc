@@ -38,6 +38,15 @@
     <ClCompile Include="hid.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
+    <ClCompile Include="mcp2210device.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormSystemLog.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="MainWindow.ui">
@@ -55,6 +64,9 @@
     </None>
     <None Include="odlc_dimap_gui_remote-Release.vgdbsettings">
       <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="SystemLog.ui">
+      <Filter>Source files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +86,15 @@
       <Filter>Header files</Filter>
     </ClInclude>
     <ClInclude Include="symbols.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="mcp2210device.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormSystemLog.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
       <Filter>Header files</Filter>
     </ClInclude>
   </ItemGroup>

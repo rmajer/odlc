@@ -169,4 +169,9 @@ int ht_read_status(ht_spi_device *device, byte *res);
 // helferfunktionen
 char *print_bitfield_8(byte bitfield);
 
+
+
+
+
+
 #endif 

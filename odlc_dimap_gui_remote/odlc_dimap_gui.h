@@ -1,10 +1,29 @@
 #pragma once
 
-#ifndef _ODLC_DIMAP_H
-#define _ODLC_DIMAP_H
+//#ifndef _ODLC_DIMAP_H
+//#define _ODLC_DIMAP_H
+
+#include <QSettings>
+#include "Logger.h"
 
 
-#include "symbols.h"
+//// hardware
+//#include "symbols.h"
+//#include "mcp2210device.h"
+//
+//
+//// gui
+//#include "MainWindow.h"
+//#include "FormSystemLog.h"
 
 
-#endif
+
+
+// globals
+
+extern QSettings *settings;
+extern Logger *odlc_logger;
+
+
+
+//#endif

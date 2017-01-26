@@ -6,25 +6,37 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1064</width>
+    <height>688</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
-   <string>odlc_dimap_gui_remote</string>
+   <string>odlc_dimap_gui</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>120</y>
-      <width>75</width>
-      <height>23</height>
+      <x>0</x>
+      <y>40</y>
+      <width>1061</width>
+      <height>16</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Press me</string>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>
@@ -33,42 +45,155 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>1064</width>
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuOLDC_DIMAP">
+    <property name="title">
+     <string>OLDC-DIMAP</string>
+    </property>
+    <addaction name="actionMenuInfo"/>
+    <addaction name="separator"/>
+    <addaction name="actionMenuEnde"/>
+   </widget>
+   <widget class="QMenu" name="menuKonfiguration">
+    <property name="title">
+     <string>Konfiguration</string>
+    </property>
+    <addaction name="actionSystem"/>
+    <addaction name="actionLaserdioden"/>
+   </widget>
+   <widget class="QMenu" name="menuDaten">
+    <property name="title">
+     <string>Daten</string>
+    </property>
+    <addaction name="actionProzessdaten_Log"/>
+    <addaction name="actionSystemlog"/>
+    <addaction name="separator"/>
+    <addaction name="actionProzessdaten_speichern"/>
+    <addaction name="actionSystemlog_exportieren"/>
+   </widget>
+   <widget class="QMenu" name="menuHilfe">
+    <property name="title">
+     <string>Hilfe</string>
+    </property>
+    <addaction name="actionDokumentation"/>
+   </widget>
+   <addaction name="menuOLDC_DIMAP"/>
+   <addaction name="menuKonfiguration"/>
+   <addaction name="menuDaten"/>
+   <addaction name="menuHilfe"/>
   </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
+  <widget class="QStatusBar" name="statusBar">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="sizeGripEnabled">
     <bool>false</bool>
-   </attribute>
+   </property>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionMenuInfo">
+   <property name="text">
+    <string>Info</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionEnde">
+   <property name="text">
+    <string>Ende</string>
+   </property>
+  </action>
+  <action name="actionMenuEnde">
+   <property name="text">
+    <string>Ende</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionProzessdaten_Log">
+   <property name="text">
+    <string>Prozessdaten-Log</string>
+   </property>
+  </action>
+  <action name="actionSystemlog">
+   <property name="text">
+    <string>Systemlog</string>
+   </property>
+  </action>
+  <action name="actionDokumentation">
+   <property name="text">
+    <string>Dokumentation</string>
+   </property>
+  </action>
+  <action name="actionSystem">
+   <property name="text">
+    <string>System</string>
+   </property>
+  </action>
+  <action name="actionLaserdioden">
+   <property name="text">
+    <string>Laserdioden</string>
+   </property>
+  </action>
+  <action name="actionProzessdaten_speichern">
+   <property name="text">
+    <string>Prozessdaten speichern...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSystemlog_exportieren">
+   <property name="text">
+    <string>Systemlog exportieren...</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
+   <sender>actionMenuInfo</sender>
+   <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
-   <slot>ButtonClicked()</slot>
+   <slot>MenuInfoClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>199</x>
-     <y>89</y>
+     <x>-1</x>
+     <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>279</x>
-     <y>230</y>
+     <x>531</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMenuEnde</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>531</x>
+     <y>343</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>ButtonClicked()</slot>
+  <slot>MenuInfoClicked()</slot>
+  <slot>MenuEndeClicked()</slot>
  </slots>
 </ui>

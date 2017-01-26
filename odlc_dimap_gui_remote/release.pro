@@ -9,5 +9,6 @@ DEFINES +=
 LIBS += 
 INCLUDEPATH += 
 QMAKE_LFLAGS += 
-QMAKE_CXXFLAGS += -std=c++14 -ggdb 
-QMAKE_CFLAGS += -std=c++14 -ggdb 
+QMAKE_CXXFLAGS += -ggdb 
+QMAKE_CFLAGS += -ggdb 
+COMMONFLAGS +=

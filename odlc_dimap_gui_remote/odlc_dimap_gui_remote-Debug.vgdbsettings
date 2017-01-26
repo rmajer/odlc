@@ -33,6 +33,7 @@
       </FileMasks>
       <TransferNewFilesOnly>true</TransferNewFilesOnly>
       <IncludeSubdirectories>true</IncludeSubdirectories>
+      <SelectedDirectories />
       <DeleteDisappearedFiles>true</DeleteDisappearedFiles>
     </MainSourceTransferCommand>
     <AllowChangingHostForMainCommands>false</AllowChangingHostForMainCommands>
@@ -109,13 +110,14 @@
         <Transport>BuiltinShortcut</Transport>
       </RemoteHost>
       <Command>qmake-qt4</Command>
-      <Arguments>odlc_dimap_gui_remote.pro CONFIGNAME=$(ConfigurationName)</Arguments>
+      <Arguments>odlc_dimap_gui_remote.pro CONFIGNAME=$(ConfigurationName)   </Arguments>
       <WorkingDirectory>$(BuildDir)</WorkingDirectory>
       <Environment>
         <Records />
       </Environment>
       <BackgroundMode xsi:nil="true" />
     </QMakeCommand>
+    <QMakeAdditionalArguments />
     <UpdateSourcesInQmakeFile>true</UpdateSourcesInQmakeFile>
     <GeneratedFilesFolder>GeneratedFiles</GeneratedFilesFolder>
     <QtSettings>
@@ -196,6 +198,7 @@
     <ShowMessageAfterExecuting>true</ShowMessageAfterExecuting>
   </CustomShortcuts>
   <UserDefinedVariables />
+  <ImportedPropertySheets />
   <CodeSense>
     <Enabled>Unknown</Enabled>
     <ExtraSettings>

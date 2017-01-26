@@ -173,9 +173,6 @@
 #ifndef __ARM_FP
 #define __ARM_FP 12
 #endif
-#ifndef QT_NO_DEBUG
-#define QT_NO_DEBUG 1
-#endif
 #ifndef __UFRACT_MIN__
 #define __UFRACT_MIN__ 0.0UR
 #endif
@@ -196,9 +193,6 @@
 #endif
 #ifndef __DEC32_EPSILON__
 #define __DEC32_EPSILON__ 1E-6DF
-#endif
-#ifndef __OPTIMIZE__
-#define __OPTIMIZE__ 1
 #endif
 #ifndef __CHAR_UNSIGNED__
 #define __CHAR_UNSIGNED__ 1
@@ -472,6 +466,9 @@
 #ifndef __ULLACCUM_MIN__
 #define __ULLACCUM_MIN__ 0.0ULLK
 #endif
+#ifndef __GCC_HAVE_DWARF2_CFI_ASM
+#define __GCC_HAVE_DWARF2_CFI_ASM 1
+#endif
 #ifndef __GXX_ABI_VERSION
 #define __GXX_ABI_VERSION 1002
 #endif
@@ -534,6 +531,9 @@
 #endif
 #ifndef __UHA_FBIT__
 #define __UHA_FBIT__ 8
+#endif
+#ifndef __NO_INLINE__
+#define __NO_INLINE__ 1
 #endif
 #ifndef __SFRACT_MIN__
 #define __SFRACT_MIN__ (-0.5HR-0.5HR)
@@ -1096,9 +1096,6 @@
 #ifndef __ATOMIC_RELEASE
 #define __ATOMIC_RELEASE 3
 #endif
-#ifndef DEBUG
-#define DEBUG 1
-#endif
 #endif
 
 // --- Include directories begin --- //
@@ -1114,6 +1111,7 @@
 ///usr/local/include
 ///usr/lib/gcc/arm-linux-gnueabihf/4.9/include-fixed
 ///usr/include/arm-linux-gnueabihf
+///usr/include
 ///usr/include
 // --- Include directories end --- //
 

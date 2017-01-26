@@ -11,7 +11,7 @@ TEMPLATE = app
 
 #By default the following file lists are updated automatically by VisualGDB.
 
-SOURCES   += hid.cpp ic_ht.cpp MainWindow.cpp mcp2210.cpp odlc_dimap_gui_remote.cpp
+SOURCES   += hid.c ic_ht.cpp MainWindow.cpp mcp2210.cpp odlc_dimap_gui_remote.cpp
 HEADERS   += hidapi.h ic_ht.h MainWindow.h mcp2210.h odlc_dimap_gui.h symbols.h
 FORMS     += MainWindow.ui
 RESOURCES += 

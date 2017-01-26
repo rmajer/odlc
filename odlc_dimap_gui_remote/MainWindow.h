@@ -15,11 +15,15 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-protected slots:
-    void ButtonClicked();
+protected slots :
+	void MenuInfoClicked();
+	void MenuEndeClicked();
+	
 
 private:
     Ui::MainWindow *ui;
+	void closeEvent(QCloseEvent *event);
+	
 };
 
 #endif // MAINWINDOW_H

@@ -29,6 +29,15 @@
     <ClCompile Include="MainWindow.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
+    <ClCompile Include="ic_ht.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="mcp2210.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="hid.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="MainWindow.ui">
@@ -50,6 +59,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainWindow.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="hidapi.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="ic_ht.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="mcp2210.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="odlc_dimap_gui.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="symbols.h">
       <Filter>Header files</Filter>
     </ClInclude>
   </ItemGroup>

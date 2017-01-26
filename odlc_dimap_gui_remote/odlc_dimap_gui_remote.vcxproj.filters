@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{fd82d9c5-7fb3-4642-935f-0a309d6dfdc0}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{ef1ed119-613d-4224-b4c6-4c9b85483e5e}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{80c687f6-886e-4466-813c-42b635b8c301}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="QMake Project files">
+      <UniqueIdentifier>{2bd6cdf5-8b4c-4281-9bca-75bafd4a2e2c}</UniqueIdentifier>
+      <Extensions>pro</Extensions>
+    </Filter>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{b4604aa1-bdb6-4e09-b305-b31490b0ab20}</UniqueIdentifier>
+      <Extensions>*.vgdbsettings</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="odlc_dimap_gui_remote.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MainWindow.ui">
+      <Filter>Source files</Filter>
+    </None>
+    <None Include="odlc_dimap_gui_remote.pro" />
+    <None Include="debug.pro">
+      <Filter>QMake Project files</Filter>
+    </None>
+    <None Include="odlc_dimap_gui_remote-Debug.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="release.pro">
+      <Filter>QMake Project files</Filter>
+    </None>
+    <None Include="odlc_dimap_gui_remote-Release.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainWindow.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

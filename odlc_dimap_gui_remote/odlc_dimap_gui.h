@@ -23,7 +23,7 @@
 
 extern QSettings *settings;
 extern Logger *odlc_logger;
-
+extern Logger *daten_logger;
 
 
 //#endif

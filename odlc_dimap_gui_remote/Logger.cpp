@@ -4,8 +4,10 @@
 
 #include <QTextStream>
 
-Logger::Logger(const QString &filename)
+Logger::Logger(const QString &filename, const QString prefix)
 {
+	this->_logPrefix = prefix;
+	
 	this->Log("Log gestartet.");
 	
 	this->_filename = filename;
@@ -20,7 +22,16 @@ Logger::Logger(const QString &filename)
 	{
 		this->_fileOpened = true;
 		this->Log("Logfile " + _filename + " geoeffnet.");
+		
+		// Datei-Operationen an externen Logger melden
+		QString tmp = "Logfile " + _filename + " geoeffnet.";
+		if (!this->_logPrefix.isEmpty())
+		{
+			tmp = this->_logPrefix + ": " + tmp;
+		}
+		emit this->externalLog(tmp);
 	}
+	
 }
 
 Logger::~Logger()
@@ -43,6 +54,10 @@ void Logger::Log(const QString &entry)
 	QDateTime t = QDateTime::currentDateTime();
 	QString val = t.toString("yyyy-MM-dd hh:mm:ss\t") + entry;
 	
+	if (!this->_logPrefix.isEmpty())
+	{
+		val = this->_logPrefix + "\t" + val;
+	}
 	
 	_log.push_back(val);
 	if (this->_fileOpened)
@@ -75,4 +90,9 @@ QString Logger::getLogContent()
 void Logger::clear()
 {
 	this->_log.clear();
+}
+
+void Logger::setLogPrefix(const QString &prefix)
+{
+	this->_logPrefix = prefix;
 }

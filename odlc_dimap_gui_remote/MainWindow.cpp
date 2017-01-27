@@ -14,9 +14,18 @@ MainWindow::MainWindow(QWidget *parent) :
 	
 	this->log = new FormSystemLog();
 	
+	// Logging anbinden
+	QObject::connect(this, SIGNAL(lineToLog(const QString&)), odlc_logger, SLOT(Log(const QString&)));
+	
+	// Systemlog-Form und Statusbar anbinden
 	QObject::connect(odlc_logger, SIGNAL(lineLogged(const QString&)), this->log, SLOT(addLogLine(const QString&)));
+	QObject::connect(daten_logger, SIGNAL(lineLogged(const QString&)), this->log, SLOT(addLogLine(const QString&)));
+	
 	QObject::connect(odlc_logger, SIGNAL(lineLogged(const QString&)), this->ui->statusBar, SLOT(showMessage(const QString&)));
 	
+	// an sich selbst Signale senden, wenn der Laser aus irgendeinem Grund de-initialisiert wurde
+	QObject::connect(this, SIGNAL(sigLaserInitialized(void)), this, SLOT(LaserInitialized(void)));
+	QObject::connect(this, SIGNAL(sigLaserDeInitialized(void)), this, SLOT(LaserDeInitialized(void)));
 }
 
 MainWindow::~MainWindow()
@@ -29,7 +38,9 @@ void MainWindow::MenuInfoClicked()
 	
 	//this->ui->statusBar->showMessage("Version " + ODLCSymbols::qsProgramName +" "+ ODLCSymbols::qsProgramVersion);
 	
-	odlc_logger->Log("Versionsinformation : " + ODLCSymbols::qsProgramName +" "+ ODLCSymbols::qsProgramVersion);
+	//odlc_logger->Log("Versionsinformation : " + ODLCSymbols::qsProgramName +" "+ ODLCSymbols::qsProgramVersion);
+	
+	emit this->lineToLog("Versionsinformation : " + ODLCSymbols::qsProgramName + " " + ODLCSymbols::qsProgramVersion);
 	
     QMessageBox msgBox;
 	msgBox.setText("Programmversion: " + ODLCSymbols::qsProgramVersion);
@@ -46,6 +57,9 @@ void MainWindow::MenuEndeClicked()
 
 void MainWindow::ButtonInitialisierenClicked()
 {
+	
+	emit this->sigLaserDeInitialized();
+	
 	// damit man den button nicht beliebig oft clicken kann
 	this->ui->pbMCP2210Init->setDisabled(true);
 	
@@ -57,6 +71,10 @@ void MainWindow::ButtonInitialisierenClicked()
 	
 	myMCP2210->readDeviceConfig();
 	
+	// button wieder aktivieren
+	this->ui->pbMCP2210Init->setDisabled(false);
+	
+	emit this->sigLaserInitialized();
 }
 
 
@@ -96,4 +114,25 @@ void MainWindow::cleanup()
 		log->close();
 	}
 	
+}
+
+
+void MainWindow::LaserInitialized()
+{
+	this->_laserInitialized = true;
+	
+	// startbutton etc freigeben
+	
+	// und fertig melden
+	emit this->lineToLog("Lasersystem initialisiert.");
+}
+
+
+void MainWindow::LaserDeInitialized()
+{
+	this->_laserInitialized = false;
+	// buttons etc sperren
+	
+	// und fertig
+	emit this->lineToLog("Lasersystem de-initialisiert.");
 }

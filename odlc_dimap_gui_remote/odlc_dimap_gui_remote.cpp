@@ -7,6 +7,7 @@
 
 
 Logger *odlc_logger;
+Logger *daten_logger;
 QSettings *settings;
 
 // allgemeine Initialisierungen
@@ -19,10 +20,17 @@ void init(void)
 	
 	settings = new QSettings();
 	
-	odlc_logger = new Logger(settings->value("logger/filename", ODLCSymbols::qsLoggerDefaultFilename).toString());
-	
+	odlc_logger = new Logger(settings->value("logger/filename", ODLCSymbols::qsLoggerDefaultFilename).toString(), "SYSTEM");
+	daten_logger = new Logger(settings->value("daten/filename", ODLCSymbols::qsDatenDefaultFilename).toString(), "LASERS");
 }
 
+// initialisierungen nachdem die app und das mainwindow erstellt wurden
+void initApp(void)
+{
+	
+	QObject::connect(daten_logger, SIGNAL(externalLog(const QString&)), odlc_logger, SLOT(Log(const QString&)));
+	
+}
 
 void cleanup(void)
 {
@@ -48,8 +56,15 @@ int main(int argc, char *argv[])
 	w.setWindowTitle(ODLCSymbols::qsProgramName + " (" + ODLCSymbols::qsProgramVersion + ")");
     w.show();
     
+	// Signale/Slots etc
+	initApp();
+	
+	
 	a.exec();
 	
+	
+	
+	// aufraeumen
 	cleanup();
 	
     return 0;

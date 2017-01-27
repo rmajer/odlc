@@ -24,14 +24,21 @@ class Logger : public QObject
 		
 public:
 	
-	Logger(const QString &filename);
+	Logger(const QString &filename, const QString prefix = "");
 	~Logger();
 	
 	QString getLogContent();
 	void clear();
 	
+	// soll vor dem Logeintrag ein Prefix stehen?
+	void setLogPrefix(const QString &prefix);
+	
+	
 signals:
 	void lineLogged(const QString &line);
+	
+	// um ein Signal an eine andere Log-Instanz zu schicken und dort Status-MSGs zu deponieren
+	void externalLog(const QString &line);
 	
 public slots :
 	
@@ -42,7 +49,8 @@ private:
 	
 	QString _filename;
 	QFile *_file;
-
+	QString _logPrefix;
+	
 	bool _fileOpened = false;
 	
 	//std::map<QDateTime, QString> _log;

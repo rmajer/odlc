@@ -16,8 +16,8 @@ bool MCP2210Device::readDeviceConfig()
 	
 	if (_usbKeyParameters.ErrorCode == 0)
 	{
-		this->_vendorID = QString("%1").arg(_usbKeyParameters.VID, 2, 16, QChar('0'));
-		this->_productID = QString("%1").arg(_usbKeyParameters.PID, 2, 16, QChar('0'));
+		this->_vendorID = QString("%1").arg(_usbKeyParameters.VID, 4, 16, QChar('0'));
+		this->_productID = QString("%1").arg(_usbKeyParameters.PID, 4, 16, QChar('0'));
 		
 		QString tmp = QString("%1").arg(2*_usbKeyParameters.RequestedCurrentAmountFromHost, 4, 10, QChar('0'));
 		QString val = _name + ": VendorID " + _vendorID + " | ProductID: " + _productID + " | Req. Current: " + tmp + " mA";
@@ -36,6 +36,8 @@ bool MCP2210Device::readDeviceConfig()
 	
 	_chipDef = GetChipSettings(_handle);
 	_spiTransferSettingsDef = GetSPITransferSettings(_handle);
+	
+	emit lineToLog(_name + ": Successfully initialized.");
 	
 	return true;
 }

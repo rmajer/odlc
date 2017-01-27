@@ -20,6 +20,12 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+signals:
+	
+	void sigLaserInitialized();
+	void sigLaserDeInitialized();
+	
+	void lineToLog(const QString &line);
 	
 protected slots :
 	void MenuInfoClicked();
@@ -29,8 +35,16 @@ protected slots :
 
 	void ButtonInitialisierenClicked();
 	
+	// alle Systeme wurden korrekt initialisiert; es kann gestartet werden
+	void LaserInitialized();
+	
+	// es wurde etwas geaendert, Neu-Initialisierung erforderlich
+	void LaserDeInitialized();
+	
 private:
     
+	bool _laserInitialized = false;
+	
 	Ui::MainWindow *ui;
 	
 	FormSystemLog *log;

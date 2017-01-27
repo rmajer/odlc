@@ -15,7 +15,7 @@ namespace ODLCSymbols
 	const QString qsOrganizationDomain("ooelz.at");
 
 	const QString qsLoggerDefaultFilename("/tmp/odlc.log");
-	
+	const QString qsDatenDefaultFilename("/tmp/odlc_data.log");
 }
 //
 //#endif

@@ -21,6 +21,9 @@
       <UniqueIdentifier>{b4604aa1-bdb6-4e09-b305-b31490b0ab20}</UniqueIdentifier>
       <Extensions>*.vgdbsettings</Extensions>
     </Filter>
+    <Filter Include="translations">
+      <UniqueIdentifier>{679c28bc-e3d0-46bc-a96d-9d1f3bbf9638}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="odlc_dimap_gui_remote.cpp">
@@ -97,5 +100,13 @@
     <ClInclude Include="Logger.h">
       <Filter>Header files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="odlc_dimap_gui_remote_de_DE.utf8.ts">
+      <Filter>translations</Filter>
+    </Resource>
+    <Resource Include="odlc_dimap_gui_remote_en_GB.utf8.ts">
+      <Filter>translations</Filter>
+    </Resource>
   </ItemGroup>
 </Project>

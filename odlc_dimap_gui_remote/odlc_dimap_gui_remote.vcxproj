@@ -78,6 +78,16 @@
     <None Include="odlc_dimap_gui_remote-Debug.vgdbsettings" />
     <None Include="odlc_dimap_gui_remote-Release.vgdbsettings" />
     <None Include="odlc_dimap_gui_remote.pro" />
+    <Resource Include="odlc_dimap_gui_remote_de_DE.utf8.ts">
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+    </Resource>
+    <Resource Include="odlc_dimap_gui_remote_en_GB.utf8.ts">
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+    </Resource>
     <None Include="release.pro" />
     <None Include="SystemLog.ui" />
   </ItemGroup>

@@ -54,7 +54,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Initialisieren</string>
+     <string>Initialize system</string>
     </property>
    </widget>
   </widget>
@@ -69,7 +69,7 @@
    </property>
    <widget class="QMenu" name="menuOLDC_DIMAP">
     <property name="title">
-     <string>OLDC-DIMAP</string>
+     <string>OLDC</string>
     </property>
     <addaction name="actionMenuInfo"/>
     <addaction name="separator"/>
@@ -77,14 +77,14 @@
    </widget>
    <widget class="QMenu" name="menuKonfiguration">
     <property name="title">
-     <string>Konfiguration</string>
+     <string>Configuration</string>
     </property>
     <addaction name="actionSystem"/>
     <addaction name="actionLaserdioden"/>
    </widget>
    <widget class="QMenu" name="menuDaten">
     <property name="title">
-     <string>Daten</string>
+     <string>Data</string>
     </property>
     <addaction name="actionProzessdaten_Log"/>
     <addaction name="actionSystemlog"/>
@@ -94,7 +94,7 @@
    </widget>
    <widget class="QMenu" name="menuHilfe">
     <property name="title">
-     <string>Hilfe</string>
+     <string>Help</string>
     </property>
     <addaction name="actionDokumentation"/>
    </widget>
@@ -116,7 +116,7 @@
   </widget>
   <action name="actionMenuInfo">
    <property name="text">
-    <string>Info</string>
+    <string>Version Information</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+I</string>
@@ -129,7 +129,7 @@
   </action>
   <action name="actionMenuEnde">
    <property name="text">
-    <string>Ende</string>
+    <string>Exit</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
@@ -137,17 +137,17 @@
   </action>
   <action name="actionProzessdaten_Log">
    <property name="text">
-    <string>Prozessdaten-Log</string>
+    <string>Process Log</string>
    </property>
   </action>
   <action name="actionSystemlog">
    <property name="text">
-    <string>Systemlog</string>
+    <string>System Log</string>
    </property>
   </action>
   <action name="actionDokumentation">
    <property name="text">
-    <string>Dokumentation</string>
+    <string>Documentation</string>
    </property>
   </action>
   <action name="actionSystem">
@@ -157,12 +157,12 @@
   </action>
   <action name="actionLaserdioden">
    <property name="text">
-    <string>Laserdioden</string>
+    <string>Laser Diodes</string>
    </property>
   </action>
   <action name="actionProzessdaten_speichern">
    <property name="text">
-    <string>Prozessdaten speichern...</string>
+    <string>Export process data...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -170,7 +170,7 @@
   </action>
   <action name="actionSystemlog_exportieren">
    <property name="text">
-    <string>Systemlog exportieren...</string>
+    <string>Export system log...</string>
    </property>
   </action>
  </widget>

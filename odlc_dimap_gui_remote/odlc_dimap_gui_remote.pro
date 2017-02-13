@@ -15,6 +15,7 @@ SOURCES   += FormSystemLog.cpp hid.cpp ic_ht.cpp Logger.cpp MainWindow.cpp mcp22
 HEADERS   += FormSystemLog.h hidapi.h ic_ht.h Logger.h MainWindow.h mcp2210.h mcp2210device.h odlc_dimap_gui.h symbols.h
 FORMS     += MainWindow.ui SystemLog.ui
 RESOURCES += 
+TRANSLATIONS += odlc_dimap_gui_remote_en_GB.utf8.ts odlc_dimap_gui_remote_de_DE.utf8.ts
 
 include($$lower($$join(CONFIGNAME,,,.pro)))
 

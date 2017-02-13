@@ -8,7 +8,7 @@ Logger::Logger(const QString &filename, const QString prefix)
 {
 	this->_logPrefix = prefix;
 	
-	this->Log("Log gestartet.");
+	this->Log("Start logging.");
 	
 	this->_filename = filename;
 	if (!_filename.isEmpty())
@@ -21,10 +21,10 @@ Logger::Logger(const QString &filename, const QString prefix)
 	if (_file != NULL)
 	{
 		this->_fileOpened = true;
-		this->Log("Logfile " + _filename + " geoeffnet.");
+		this->Log("Opened logfile " + _filename + ".");
 		
 		// Datei-Operationen an externen Logger melden
-		QString tmp = "Logfile " + _filename + " geoeffnet.";
+		QString tmp = "Opened logfile " + _filename + ".";
 		if (!this->_logPrefix.isEmpty())
 		{
 			tmp = this->_logPrefix + ": " + tmp;
@@ -39,12 +39,12 @@ Logger::~Logger()
 		
 	if (_file != NULL)
 	{
-		this->Log("Logfile " + _filename + " wird geschlossen");
+		this->Log("Closing logfile " + _filename + ".");
 	
 		_file->close();
 	}
 	
-	this->Log("Log geschlossen.");
+	this->Log("Log closed.");
 }
 
 

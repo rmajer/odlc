@@ -40,10 +40,10 @@ void MainWindow::MenuInfoClicked()
 	
 	//odlc_logger->Log("Versionsinformation : " + ODLCSymbols::qsProgramName +" "+ ODLCSymbols::qsProgramVersion);
 	
-	emit this->lineToLog("Versionsinformation : " + ODLCSymbols::qsProgramName + " " + ODLCSymbols::qsProgramVersion);
+	emit this->lineToLog("Program version : " + ODLCSymbols::qsProgramName + " " + ODLCSymbols::qsProgramVersion);
 	
     QMessageBox msgBox;
-	msgBox.setText("Programmversion: " + ODLCSymbols::qsProgramVersion);
+	msgBox.setText("Program version: " + ODLCSymbols::qsProgramVersion);
 	msgBox.setWindowTitle(ODLCSymbols::qsProgramName);
     msgBox.exec();
 }
@@ -95,7 +95,7 @@ void MainWindow::closeEvent(QCloseEvent *event)  // show prompt when user wants 
 {
 	
 	event->ignore();
-	if (QMessageBox::Yes == QMessageBox::question(this, "Programmende bestaetigen", "Wirklich beenden?", QMessageBox::No | QMessageBox::Yes))
+	if (QMessageBox::Yes == QMessageBox::question(this, tr("Quitting program"), tr("Do you want to quit?"), QMessageBox::No | QMessageBox::Yes))
 	{
 		
 		this->cleanup();
@@ -124,7 +124,7 @@ void MainWindow::LaserInitialized()
 	// startbutton etc freigeben
 	
 	// und fertig melden
-	emit this->lineToLog("Lasersystem initialisiert.");
+	emit this->lineToLog("Laser subsystem initialized.");
 }
 
 
@@ -134,5 +134,5 @@ void MainWindow::LaserDeInitialized()
 	// buttons etc sperren
 	
 	// und fertig
-	emit this->lineToLog("Lasersystem de-initialisiert.");
+	emit this->lineToLog("Laser subsystem de-initialized.");
 }

@@ -8,8 +8,8 @@
 namespace ODLCSymbols
 {
 
-	const QString qsProgramVersion("0.01 SR1");
-	const QString qsProgramName("OLDC-DIMAP");
+	const QString qsProgramVersion("0.02");
+	const QString qsProgramName("OLDC");
 
 	const QString qsOrganizationName("OOELZ");
 	const QString qsOrganizationDomain("ooelz.at");
